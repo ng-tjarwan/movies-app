@@ -1,0 +1,115 @@
+<h1>Movie Title</h1>
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <iframe
+      width="100%"
+      height="315"
+      src="https://www.youtube.com/embed/tS7upsfuxmo?si=Z9dJXFhphOU0i0T_"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="col-md-6">
+    <p class="lead">This it going to be a placeholder for the movie plot</p>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">Stars</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">Directors</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">Genres</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+<br />
+
+<div class="row">
+  <h1>Actors</h1>
+  <hr />
+
+  <div class="col-md-12 text-center">
+    <app-details-actors></app-details-actors>
+  </div>
+
+  <div class="text-center mt-4">
+    <a
+      class="btn btn-warning"
+      [routerLink]="['/details/' + movieId + '/actors']"
+    >
+      View more
+    </a>
+  </div>
+</div>
+
+<hr />
+<br />
+
+<div class="row">
+  <h1>Reviews</h1>
+  <hr />
+
+  <div class="col-md-12">
+    <app-details-reviews></app-details-reviews>
+  </div>
+
+  <div class="text-center mt-4">
+    <a
+      class="btn btn-warning"
+      [routerLink]="['/details/' + movieId + '/reviews']"
+    >
+      View more
+    </a>
+  </div>
+</div>
+
+<hr />
+<br />
+
+<div class="row">
+  <h1>Similar Movies</h1>
+  <hr />
+
+  <div class="col-md-12 text-center">
+    <app-details-movies></app-details-movies>
+  </div>
+
+  <div class="text-center mt-4">
+    <a
+      class="btn btn-warning"
+      [routerLink]="['/details/' + movieId + '/movies']"
+    >
+      View more
+    </a>
+  </div>
+</div>

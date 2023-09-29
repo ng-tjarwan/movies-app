@@ -1,0 +1,249 @@
+<div class="row">
+  <div class="col-md-8">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Movie 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Movie 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Movie 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://soliloquywp.com/wp-content/uploads/2016/08/11-Website-Slider-Best-Practices-That-You-Must-Follow.png"
+            class="d-block w-100"
+            width="1000"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First movie</h5>
+            <p>Some representative for the first movie.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpImSrHKQkEA84dxNxQ0GY4V0WZALH-7a8yH0GuBG8qsjJ8bPbDdg4y2oSOA4DYPzXOts&usqp=CAU"
+            class="d-block w-100"
+            width="1000"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second movie</h5>
+            <p>Some representative for the second movie.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa2ADaMX_XROJXt-lbbEo9b9S6uit9SgmsW3sOr_ajo9OQgy2l5qahucutW-BuoFscEqk&usqp=CAU"
+            class="d-block w-100"
+            width="1000"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third movie</h5>
+            <p>Some representative for the third movie.</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div
+      class="card mb-3"
+      style="max-width: 540px"
+      [routerLink]="['details/1']"
+    >
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
+            class="img-fluid rounded-start h-100"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example</p>
+            <p class="card-text">
+              <a class="btn btn-warning"> <i class="bi bi-film"></i> Trailer</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card mb-3"
+      style="max-width: 540px"
+      [routerLink]="['details/1']"
+    >
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
+            class="img-fluid rounded-start h-100"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example</p>
+            <p class="card-text">
+              <a class="btn btn-warning"> <i class="bi bi-film"></i> Trailer</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card mb-3"
+      style="max-width: 540px"
+      [routerLink]="['details/1']"
+    >
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
+            class="img-fluid rounded-start h-100"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example</p>
+            <p class="card-text">
+              <a class="btn btn-warning"> <i class="bi bi-film"></i> Trailer</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <h1>Fan favorites</h1>
+  <hr />
+  <div class="col-md-3">
+    <div class="card" [routerLink]="['details/1']">
+      <img
+        src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
+        alt=""
+        class="card-image"
+      />
+
+      <div class="card-body">
+        <h5 class="card-title">Movie title</h5>
+        <p class="card-text">Movie actors</p>
+      </div>
+      <div
+        class="card-footer text-center text-muted d-flex justify-content-between"
+      >
+        <span><i class="bi bi-calendar"></i> 2023</span>
+        <span><i class="bi bi-star"></i> 9.5/10</span>
+        <span><i class="bi bi-trophy"></i> 1</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card" [routerLink]="['details/2']">
+      <img
+        src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
+        alt=""
+        class="card-image"
+      />
+
+      <div class="card-body">
+        <h5 class="card-title">Movie title</h5>
+        <p class="card-text">Movie actors</p>
+      </div>
+      <div
+        class="card-footer text-center text-muted d-flex justify-content-between"
+      >
+        <span><i class="bi bi-calendar"></i> 2023</span>
+        <span><i class="bi bi-star"></i> 9.5/10</span>
+        <span><i class="bi bi-trophy"></i> 1</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card" [routerLink]="['details/3']">
+      <img
+        src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
+        alt=""
+        class="card-image"
+      />
+
+      <div class="card-body">
+        <h5 class="card-title">Movie title</h5>
+        <p class="card-text">Movie actors</p>
+      </div>
+      <div
+        class="card-footer text-center text-muted d-flex justify-content-between"
+      >
+        <span><i class="bi bi-calendar"></i> 2023</span>
+        <span><i class="bi bi-star"></i> 9.5/10</span>
+        <span><i class="bi bi-trophy"></i> 1</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card" [routerLink]="['details/4']">
+      <img
+        src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
+        alt=""
+        class="card-image"
+      />
+
+      <div class="card-body">
+        <h5 class="card-title">Movie title</h5>
+        <p class="card-text">Movie actors</p>
+      </div>
+      <div
+        class="card-footer text-center text-muted d-flex justify-content-between"
+      >
+        <span><i class="bi bi-calendar"></i> 2023</span>
+        <span><i class="bi bi-star"></i> 9.5/10</span>
+        <span><i class="bi bi-trophy"></i> 1</span>
+      </div>
+    </div>
+  </div>
+</div>
