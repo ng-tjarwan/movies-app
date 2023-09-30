@@ -1,96 +1,10 @@
-<figure class="figure">
+<figure class="figure" *ngFor="let actor of movieActors">
   <img
-    src="https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg"
+    [src]="actor.imageUrl"
     class="figure-img img-fluid rounded img-thumbnail"
     style="max-width: 150px"
-    alt="..."
+    [alt]="actor.name"
   />
-  <figcaption class="figure-caption">Actor Name</figcaption>
-  <figcaption class="figure-caption">(role)</figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 150px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Actor Name</figcaption>
-  <figcaption class="figure-caption">(role)</figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 150px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Actor Name</figcaption>
-  <figcaption class="figure-caption">(role)</figcaption>
-</figure>
-<figure class="figure">
-  <img
-    src="https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 150px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Actor Name</figcaption>
-  <figcaption class="figure-caption">(role)</figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 150px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Actor Name</figcaption>
-  <figcaption class="figure-caption">(role)</figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 150px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Actor Name</figcaption>
-  <figcaption class="figure-caption">(role)</figcaption>
-</figure>
-<figure class="figure">
-  <img
-    src="https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 150px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Actor Name</figcaption>
-  <figcaption class="figure-caption">(role)</figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 150px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Actor Name</figcaption>
-  <figcaption class="figure-caption">(role)</figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 150px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Actor Name</figcaption>
-  <figcaption class="figure-caption">(role)</figcaption>
+  <figcaption class="figure-caption">{{ actor.name }}</figcaption>
+  <figcaption class="figure-caption">{{ actor.role }}</figcaption>
 </figure>

@@ -1,105 +1,37 @@
 <div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button
-        class="accordion-button gap-1"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseOne"
-        aria-expanded="true"
-        aria-controls="collapseOne"
-      >
-        <i class="bi bi-star"></i> <b>7.5/10</b> Review #1
-      </button>
-    </h2>
-    <div
-      id="collapseOne"
-      class="accordion-collapse collapse show"
-      data-bs-parent="#accordionExample"
-    >
-      <div class="accordion-body">
-        <p>
-          This is the second item's accordion body. It is hidden by default,
-          until the collapse plugin adds the appropriate classes that we use to
-          style each element. These classes control the overall appearance, as
-          well as the showing and hiding via CSS transitions. You can modify any
-          of this with custom CSS or overriding our default variables. It's also
-          worth noting that just about any HTML can go within the, though the
-          transition does limit overflow.
-        </p>
-        <p class="blockquote-footer">Review Author</p>
-        <p>
-          <i>100 out of 120 fount this useful</i>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
+  <div
+    class="accordion-item"
+    *ngFor="let review of movieReviews; let i = index"
+  >
     <h2 class="accordion-header">
       <button
         class="accordion-button collapsed gap-1"
         type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#collapseTwo"
+        [attr.data-bs-target]="'#collapse' + i"
         aria-expanded="false"
-        aria-controls="collapseTwo"
+        [attr.aria-controls]="'#collapse' + i"
       >
-        <i class="bi bi-star"></i> <b>7.5/10</b> Review #2
+        <i class="bi bi-star"></i> <b>{{ review.rate }}/10</b> - Review #{{
+          i + 1
+        }}
       </button>
     </h2>
     <div
-      id="collapseTwo"
+      id="collapse{{ i }}"
       class="accordion-collapse collapse"
       data-bs-parent="#accordionExample"
     >
       <div class="accordion-body">
         <p>
-          This is the second item's accordion body. It is hidden by default,
-          until the collapse plugin adds the appropriate classes that we use to
-          style each element. These classes control the overall appearance, as
-          well as the showing and hiding via CSS transitions. You can modify any
-          of this with custom CSS or overriding our default variables. It's also
-          worth noting that just about any HTML can go within the, though the
-          transition does limit overflow.
+          {{ review.review }}
         </p>
-        <p class="blockquote-footer">Review Author</p>
+        <p class="blockquote-footer">{{ review.author }}</p>
         <p>
-          <i>100 out of 120 fount this useful</i>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button
-        class="accordion-button collapsed gap-1"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseThree"
-        aria-expanded="false"
-        aria-controls="collapseThree"
-      >
-        <i class="bi bi-star"></i> <b>7.5/10</b> Review #3
-      </button>
-    </h2>
-    <div
-      id="collapseThree"
-      class="accordion-collapse collapse"
-      data-bs-parent="#accordionExample"
-    >
-      <div class="accordion-body">
-        <p>
-          This is the second item's accordion body. It is hidden by default,
-          until the collapse plugin adds the appropriate classes that we use to
-          style each element. These classes control the overall appearance, as
-          well as the showing and hiding via CSS transitions. You can modify any
-          of this with custom CSS or overriding our default variables. It's also
-          worth noting that just about any HTML can go within the, though the
-          transition does limit overflow.
-        </p>
-        <p class="blockquote-footer">Review Author</p>
-        <p>
-          <i>100 out of 120 fount this useful</i>
+          <i
+            >{{ review.usefulCount }} out of {{ review.totalCount }} found this
+            useful</i
+          >
         </p>
       </div>
     </div>

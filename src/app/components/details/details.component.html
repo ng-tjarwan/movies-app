@@ -1,4 +1,4 @@
-<h1>Movie Title</h1>
+<h1>{{title}}</h1>
 <br />
 
 <div class="row">
@@ -14,16 +14,16 @@
     ></iframe>
   </div>
   <div class="col-md-6">
-    <p class="lead">This it going to be a placeholder for the movie plot</p>
+    <p class="lead">{{ description }}</p>
 
     <div class="row">
       <div class="col-md-4">
         <div class="card">
           <div class="card-header">Stars</div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item" *ngFor="let star of stars">
+              {{ star }}
+            </li>
           </ul>
         </div>
       </div>
@@ -31,9 +31,9 @@
         <div class="card">
           <div class="card-header">Directors</div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item" *ngFor="let dir of directors">
+              {{ dir }}
+            </li>
           </ul>
         </div>
       </div>
@@ -41,9 +41,9 @@
         <div class="card">
           <div class="card-header">Genres</div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item" *ngFor="let gen of genres">
+              {{ gen }}
+            </li>
           </ul>
         </div>
       </div>

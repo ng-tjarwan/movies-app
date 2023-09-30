@@ -17,6 +17,8 @@ import { ProfitPipe } from './pipes/profit.pipe';
 import { FormsModule } from '@angular/forms';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HeaderDirective } from './directives/header.directive';
+import { MyIfDirective } from './directives/my-if.directive';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
     // Pipes
     ProfitPipe,
+
+    // Directives
+    HeaderDirective,
+     MyIfDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

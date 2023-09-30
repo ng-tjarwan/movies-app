@@ -1,90 +1,12 @@
-<figure class="figure">
+<figure class="figure" *ngFor="let movie of similarMovies">
   <img
-    src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
+    [src]="movie.imageUrl"
     class="figure-img img-fluid rounded img-thumbnail"
     style="max-width: 200px"
-    alt="..."
+    [alt]="movie.title"
   />
-  <figcaption class="figure-caption">Movie Title</figcaption>
+  <figcaption class="figure-caption">{{ movie.title }}</figcaption>
   <figcaption class="figure-caption gap-1 d-flex justify-content-center">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 200px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie Title</figcaption>
-  <figcaption class="figure-caption gap-1 d-flex justify-content-center">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 200px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie Title</figcaption>
-  <figcaption class="figure-caption gap-1 d-flex justify-content-center">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 200px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie Title</figcaption>
-  <figcaption class="figure-caption gap-1 d-flex justify-content-center">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 200px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie Title</figcaption>
-  <figcaption class="figure-caption gap-1 d-flex justify-content-center">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 200px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie Title</figcaption>
-  <figcaption class="figure-caption gap-1 d-flex justify-content-center">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-
-<figure class="figure">
-  <img
-    src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
-    class="figure-img img-fluid rounded img-thumbnail"
-    style="max-width: 200px"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie Title</figcaption>
-  <figcaption class="figure-caption gap-1 d-flex justify-content-center">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
+    <i class="bi bi-star"></i> <b>{{ movie.rate }}/10</b>
   </figcaption>
 </figure>

@@ -1,4 +1,16 @@
 <div class="row">
+  <!-- * USE the Custom Directive -->
+  <!-- <h2 appHeader>This is just a sample text</h2> -->
+  <div [ngSwitch]="integerValue">
+    <h2 *ngSwitchCase="0">The value is {{ integerValue }}</h2>
+    <h2 *ngSwitchCase="10">The value is {{ integerValue }}</h2>
+    <h2 *ngSwitchCase="20">The value is {{ integerValue }}</h2>
+    <h2 *ngSwitchCase="30">The value is {{ integerValue }}</h2>
+    <h2 *ngSwitchDefault>The value is default value</h2>
+  </div>
+
+  <h2 *appMyIf="booleanValue">this is a custom Directive</h2>
+
   <div class="col-md-8">
     <div id="carouselExampleCaptions" class="carousel slide">
       <div class="carousel-indicators">
@@ -85,68 +97,21 @@
     <div
       class="card mb-3"
       style="max-width: 540px"
-      [routerLink]="['details/1']"
+      *ngFor="let movie of topMovies"
+      [routerLink]="['details/' + movie.id]"
     >
       <div class="row g-0">
         <div class="col-md-4">
           <img
-            src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
+            [src]="movie.cover"
             class="img-fluid rounded-start h-100"
-            alt="..."
+            [alt]="movie.title"
           />
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example</p>
-            <p class="card-text">
-              <a class="btn btn-warning"> <i class="bi bi-film"></i> Trailer</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="card mb-3"
-      style="max-width: 540px"
-      [routerLink]="['details/1']"
-    >
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
-            class="img-fluid rounded-start h-100"
-            alt="..."
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example</p>
-            <p class="card-text">
-              <a class="btn btn-warning"> <i class="bi bi-film"></i> Trailer</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="card mb-3"
-      style="max-width: 540px"
-      [routerLink]="['details/1']"
-    >
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
-            class="img-fluid rounded-start h-100"
-            alt="..."
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example</p>
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <p class="card-text">{{ movie.actors }}</p>
             <p class="card-text">
               <a class="btn btn-warning"> <i class="bi bi-film"></i> Trailer</a>
             </p>
@@ -162,87 +127,20 @@
 <div class="row">
   <h1>Fan favorites</h1>
   <hr />
-  <div class="col-md-3">
-    <div class="card" [routerLink]="['details/1']">
-      <img
-        src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
-        alt=""
-        class="card-image"
-      />
+  <div class="col-md-3" *ngFor="let movie of fanFavMovies">
+    <div class="card" [routerLink]="['details/' + movie.id]">
+      <img [src]="movie.cover" [alt]="movie.title" class="card-image" />
 
       <div class="card-body">
-        <h5 class="card-title">Movie title</h5>
-        <p class="card-text">Movie actors</p>
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">{{ movie.actors }}</p>
       </div>
       <div
         class="card-footer text-center text-muted d-flex justify-content-between"
       >
-        <span><i class="bi bi-calendar"></i> 2023</span>
-        <span><i class="bi bi-star"></i> 9.5/10</span>
-        <span><i class="bi bi-trophy"></i> 1</span>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card" [routerLink]="['details/2']">
-      <img
-        src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
-        alt=""
-        class="card-image"
-      />
-
-      <div class="card-body">
-        <h5 class="card-title">Movie title</h5>
-        <p class="card-text">Movie actors</p>
-      </div>
-      <div
-        class="card-footer text-center text-muted d-flex justify-content-between"
-      >
-        <span><i class="bi bi-calendar"></i> 2023</span>
-        <span><i class="bi bi-star"></i> 9.5/10</span>
-        <span><i class="bi bi-trophy"></i> 1</span>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card" [routerLink]="['details/3']">
-      <img
-        src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
-        alt=""
-        class="card-image"
-      />
-
-      <div class="card-body">
-        <h5 class="card-title">Movie title</h5>
-        <p class="card-text">Movie actors</p>
-      </div>
-      <div
-        class="card-footer text-center text-muted d-flex justify-content-between"
-      >
-        <span><i class="bi bi-calendar"></i> 2023</span>
-        <span><i class="bi bi-star"></i> 9.5/10</span>
-        <span><i class="bi bi-trophy"></i> 1</span>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card" [routerLink]="['details/4']">
-      <img
-        src="https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined"
-        alt=""
-        class="card-image"
-      />
-
-      <div class="card-body">
-        <h5 class="card-title">Movie title</h5>
-        <p class="card-text">Movie actors</p>
-      </div>
-      <div
-        class="card-footer text-center text-muted d-flex justify-content-between"
-      >
-        <span><i class="bi bi-calendar"></i> 2023</span>
-        <span><i class="bi bi-star"></i> 9.5/10</span>
-        <span><i class="bi bi-trophy"></i> 1</span>
+        <span><i class="bi bi-calendar"></i> {{ movie.releaseYear }}</span>
+        <span><i class="bi bi-star"></i> {{ movie.rate }}/10</span>
+        <span><i class="bi bi-trophy"></i> {{ movie.trophies }}</span>
       </div>
     </div>
   </div>

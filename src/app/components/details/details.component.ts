@@ -18,6 +18,11 @@ export class DetailsComponent
   implements OnInit, OnChanges, AfterContentInit, AfterViewInit, OnDestroy
 {
   movieId = '';
+  title = 'Movie Title';
+  stars = ['First Star', 'Second Star', 'Third Star'];
+  directors = ['First Dir', 'Second Dir', 'Third Dir'];
+  genres = ['First Gen', 'Second Gen', 'Third Gen'];
+  description = 'This it going to be a placeholder for the movie plot';
 
   constructor(private _activatedRoute: ActivatedRoute) {
     this._activatedRoute.params.subscribe((p) => {
