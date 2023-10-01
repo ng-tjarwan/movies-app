@@ -22,6 +22,7 @@ import { HeaderDirective } from './directives/header.directive';
 import { MyIfDirective } from './directives/my-if.directive';
 import { MoviesService } from './services/movies.service';
 import { GlobalErrorHandler } from './services/global-error-handler.service';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { GlobalErrorHandler } from './services/global-error-handler.service';
     // Directives
     HeaderDirective,
     MyIfDirective,
+    FeedbackComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [
