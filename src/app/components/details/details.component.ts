@@ -1,52 +1,53 @@
-import {
-  AfterContentInit,
-  AfterViewInit,
-  Component,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css'],
 })
-export class DetailsComponent
-  implements OnInit, OnChanges, AfterContentInit, AfterViewInit, OnDestroy
-{
+// OnChanges, AfterContentInit, AfterViewInit, OnDestroy
+export class DetailsComponent implements OnInit {
   movieId = '';
-  title = 'Movie Title';
-  stars = ['First Star', 'Second Star', 'Third Star'];
-  directors = ['First Dir', 'Second Dir', 'Third Dir'];
-  genres = ['First Gen', 'Second Gen', 'Third Gen'];
-  description = 'This it going to be a placeholder for the movie plot';
+  title = '';
+  stars = [];
+  directors = [];
+  genres = [];
+  description = '';
 
-  constructor(private _activatedRoute: ActivatedRoute) {
-    this._activatedRoute.params.subscribe((p) => {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private moviesService: MoviesService
+  ) {
+    this.activatedRoute.params.subscribe((p) => {
       this.movieId = p['id'];
     });
   }
 
   ngOnInit(): void {
-    console.log('ngOnInit called.');
+    this.moviesService.getMovieSummary().subscribe((res: any) => {
+      this.stars = res.stars;
+      this.directors = res.directors;
+      this.genres = res.genres;
+      this.description = res.description;
+      this.title = res.title;
+    });
   }
 
-  ngAfterContentInit(): void {
-    console.log('ngAfterContentInit called.');
-  }
+  // ngAfterContentInit(): void {
+  //   console.log('ngAfterContentInit called.');
+  // }
 
-  ngAfterViewInit(): void {
-    console.log('ngAfterViewInit called');
-  }
+  // ngAfterViewInit(): void {
+  //   console.log('ngAfterViewInit called');
+  // }
 
-  ngOnDestroy(): void {
-    console.log('ngOnDestroy called.');
-  }
+  // ngOnDestroy(): void {
+  //   console.log('ngOnDestroy called.');
+  // }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges called');
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log('ngOnChanges called');
+  // }
 }

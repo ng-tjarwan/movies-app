@@ -1,67 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-details-actors',
   templateUrl: './details-actors.component.html',
   styleUrls: ['./details-actors.component.css'],
 })
-export class DetailsActorsComponent {
-  movieActors = [
-    {
-      id: '1',
-      imageUrl:
-        'https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg',
-      role: 'Role',
-      name: 'Actor Name',
-    },
-    {
-      id: '1',
-      imageUrl:
-        'https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg',
-      role: 'Role',
-      name: 'Actor Name',
-    },
-    {
-      id: '1',
-      imageUrl:
-        'https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg',
-      role: 'Role',
-      name: 'Actor Name',
-    },
-    {
-      id: '1',
-      imageUrl:
-        'https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg',
-      role: 'Role',
-      name: 'Actor Name',
-    },
-    {
-      id: '1',
-      imageUrl:
-        'https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg',
-      role: 'Role',
-      name: 'Actor Name',
-    },
-    {
-      id: '1',
-      imageUrl:
-        'https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg',
-      role: 'Role',
-      name: 'Actor Name',
-    },
-    {
-      id: '1',
-      imageUrl:
-        'https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg',
-      role: 'Role',
-      name: 'Actor Name',
-    },
-    {
-      id: '1',
-      imageUrl:
-        'https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg',
-      role: 'Role',
-      name: 'Actor Name',
-    },
-  ];
+export class DetailsActorsComponent implements OnInit {
+  movieActors: any[] = [];
+
+  constructor(private moviesService: MoviesService) {}
+
+  ngOnInit(): void {
+    this.moviesService
+      .getMovieSummary()
+      .subscribe((res: any) => (this.movieActors = res.actors));
+  }
 }

@@ -1,77 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
-  integerValue = 40;
-  booleanValue = false;
+export class HomeComponent implements OnInit {
+  fanFavMovies: any[] = [];
+  topMovies: any[] = [];
 
-  fanFavMovies = [
-    {
-      id: '1',
-      title: 'Movie title',
-      actors: 'Movie actors',
-      releaseYear: 2023,
-      rate: 9.5,
-      trophies: 1,
-      cover:
-        'https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined',
-    },
-    {
-      id: '1',
-      title: 'Movie title',
-      actors: 'Movie actors',
-      releaseYear: 2023,
-      rate: 9.5,
-      trophies: 1,
-      cover:
-        'https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined',
-    },
-    {
-      id: '1',
-      title: 'Movie title',
-      actors: 'Movie actors',
-      releaseYear: 2023,
-      rate: 9.5,
-      trophies: 1,
-      cover:
-        'https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined',
-    },
-    {
-      id: '1',
-      title: 'Movie title',
-      actors: 'Movie actors',
-      releaseYear: 2023,
-      rate: 9.5,
-      trophies: 1,
-      cover:
-        'https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined',
-    },
-  ];
+  constructor(private moviesService: MoviesService) {}
 
-  topMovies = [
-    {
-      id: '1',
-      title: 'Movie title',
-      actors: 'Movie actors',
-      releaseYear: 2023,
-      rate: 9.5,
-      trophies: 1,
-      cover:
-        'https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined',
-    },
-    {
-      id: '1',
-      title: 'Movie title',
-      actors: 'Movie actors',
-      releaseYear: 2023,
-      rate: 9.5,
-      trophies: 1,
-      cover:
-        'https://assets.vogue.in/photos/5f16b3bc9ffca08d1848369b/1:1/pass/undefined',
-    },
-  ];
+  ngOnInit(): void {
+    this.moviesService
+      .getFanFavoriteMovies()
+      .subscribe((res) => (this.fanFavMovies = res));
+
+    this.moviesService
+      .getTopMovies()
+      .subscribe((res) => (this.topMovies = res));
+  }
 }

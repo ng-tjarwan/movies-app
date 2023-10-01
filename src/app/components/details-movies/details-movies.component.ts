@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-details-movies',
@@ -6,55 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./details-movies.component.css'],
 })
 export class DetailsMoviesComponent {
-  similarMovies = [
-    {
-      id: 1,
-      imageUrl:
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"',
-      title: 'Movie Title',
-      rate: 9.1,
-    },
-    {
-      id: 1,
-      imageUrl:
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"',
-      title: 'Movie Title',
-      rate: 9.1,
-    },
-    {
-      id: 1,
-      imageUrl:
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"',
-      title: 'Movie Title',
-      rate: 9.1,
-    },
-    {
-      id: 1,
-      imageUrl:
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"',
-      title: 'Movie Title',
-      rate: 9.1,
-    },
-    {
-      id: 1,
-      imageUrl:
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"',
-      title: 'Movie Title',
-      rate: 9.1,
-    },
-    {
-      id: 1,
-      imageUrl:
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"',
-      title: 'Movie Title',
-      rate: 9.1,
-    },
-    {
-      id: 1,
-      imageUrl:
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"',
-      title: 'Movie Title',
-      rate: 9.1,
-    },
-  ];
+  similarMovies: any[] = [];
+
+  constructor(private moviesService: MoviesService) {}
+
+  ngOnInit(): void {
+    this.moviesService
+      .getMovieSummary()
+      .subscribe((res: any) => (this.similarMovies = res.similarMovies));
+  }
 }

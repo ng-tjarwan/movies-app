@@ -1,0 +1,124 @@
+{
+  "title": "Movie Title",
+  "description": "This it going to be a placeholder for the movie plot",
+  "stars": ["First Star", "Second Star", "Third Star"],
+  "genres": ["First Genre", "Second Genre", "Third Genre"],
+  "directors": ["First Director", "Second Director", "Third Director"],
+  "actors": [
+    {
+      "id": "1",
+      "imageUrl": "https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg",
+      "role": "Role",
+      "name": "Actor Name"
+    },
+    {
+      "id": "1",
+      "imageUrl": "https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg",
+      "role": "Role",
+      "name": "Actor Name"
+    },
+    {
+      "id": "1",
+      "imageUrl": "https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg",
+      "role": "Role",
+      "name": "Actor Name"
+    },
+    {
+      "id": "1",
+      "imageUrl": "https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg",
+      "role": "Role",
+      "name": "Actor Name"
+    },
+    {
+      "id": "1",
+      "imageUrl": "https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg",
+      "role": "Role",
+      "name": "Actor Name"
+    },
+    {
+      "id": "1",
+      "imageUrl": "https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg",
+      "role": "Role",
+      "name": "Actor Name"
+    },
+    {
+      "id": "1",
+      "imageUrl": "https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg",
+      "role": "Role",
+      "name": "Actor Name"
+    },
+    {
+      "id": "1",
+      "imageUrl": "https://www.listchallenges.com/f/items/26fad398-238e-4d27-bf7e-46321b7b3d58.jpg",
+      "role": "Role",
+      "name": "Actor Name"
+    }
+  ],
+  "reviews": [
+    {
+      "rate": 7.5,
+      "review": "This is the second item's accordion body. It is hidden by default,until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the, though the transition does limit overflow.",
+      "author": "Author",
+      "usefulCount": 100,
+      "totalCount": 120
+    },
+    {
+      "rate": 7.5,
+      "review": "This is the second item's accordion body. It is hidden by default,until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the, though the transition does limit overflow.",
+      "author": "Author",
+      "usefulCount": 100,
+      "totalCount": 120
+    },
+    {
+      "rate": 7.5,
+      "review": "This is the second item's accordion body. It is hidden by default,until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the, though the transition does limit overflow.",
+      "author": "Author",
+      "usefulCount": 100,
+      "totalCount": 120
+    }
+  ],
+  "similarMovies": [
+    {
+      "id": 1,
+      "imageUrl": "https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg\"",
+      "title": "Movie Title",
+      "rate": 9.1
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg\"",
+      "title": "Movie Title",
+      "rate": 9.1
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg\"",
+      "title": "Movie Title",
+      "rate": 9.1
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg\"",
+      "title": "Movie Title",
+      "rate": 9.1
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg\"",
+      "title": "Movie Title",
+      "rate": 9.1
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg\"",
+      "title": "Movie Title",
+      "rate": 9.1
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg\"",
+      "title": "Movie Title",
+      "rate": 9.1
+    }
+  ]
+}

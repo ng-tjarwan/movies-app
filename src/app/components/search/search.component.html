@@ -12,68 +12,25 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="align-middle">
-      <th scope="row">1</th>
+    <tr class="align-middle" *ngFor="let item of result; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
       <td>
-        <img
-          src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
-          width="80"
-          alt=""
-        />
+        <img [src]="item.imageUrl" width="80" [alt]="item.title" />
       </td>
-      <td>Movie Title</td>
-      <td>Movie Description</td>
+      <td>{{ item.title }}</td>
+      <td>{{ item.description }}</td>
       <td>
         <div class="d-flex gap-2">
           <a
             class="btn btn-warning"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
-            ><i class="bi bi-film me-1"></i>Trailer</a
           >
-          <a class="btn btn-primary" routerLink="/details"
-            ><i class="bi bi-eye me-1"></i>Details</a
-          >
-        </div>
-      </td>
-    </tr>
-    <tr class="align-middle">
-      <th scope="row">2</th>
-      <td>
-        <img
-          src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
-          width="80"
-          alt=""
-        />
-      </td>
-      <td>Movie Title</td>
-      <td>Movie Description</td>
-      <td>
-        <div class="d-flex gap-2">
-          <a class="btn btn-warning"><i class="bi bi-film me-1"></i>Trailer</a>
-          <a class="btn btn-primary" routerLink="/details"
-            ><i class="bi bi-eye me-1"></i>Details</a
-          >
-        </div>
-      </td>
-    </tr>
-    <tr class="align-middle">
-      <th scope="row">3</th>
-      <td>
-        <img
-          src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
-          width="80"
-          alt=""
-        />
-      </td>
-      <td>Movie Title</td>
-      <td>Movie Description</td>
-      <td>
-        <div class="d-flex gap-2">
-          <a class="btn btn-warning"><i class="bi bi-film me-1"></i>Trailer</a>
-          <a class="btn btn-primary" routerLink="/details"
-            ><i class="bi bi-eye me-1"></i>Details</a
-          >
+            <i class="bi bi-film me-1"></i>Trailer
+          </a>
+          <a class="btn btn-primary" [routerLink]="item.detailsLink">
+            <i class="bi bi-eye me-1"></i>Details
+          </a>
         </div>
       </td>
     </tr>

@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,8 @@ import { DetailsActorsComponent } from './components/details-actors/details-acto
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderDirective } from './directives/header.directive';
 import { MyIfDirective } from './directives/my-if.directive';
+import { MoviesService } from './services/movies.service';
+import { GlobalErrorHandler } from './services/global-error-handler.service';
 
 @NgModule({
   declarations: [
@@ -41,10 +44,13 @@ import { MyIfDirective } from './directives/my-if.directive';
 
     // Directives
     HeaderDirective,
-     MyIfDirective,
+    MyIfDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [
+    MoviesService,
+    { provide: ErrorHandler, useClass: GlobalErrorHandler },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
