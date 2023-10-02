@@ -15,7 +15,7 @@ import { SearchComponent } from './components/search/search.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ProfitPipe } from './pipes/profit.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderDirective } from './directives/header.directive';
@@ -48,7 +48,13 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     MyIfDirective,
     FeedbackComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [
     MoviesService,
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
