@@ -35,14 +35,73 @@
           [(ngModel)]="searchMovieTitle"
         />
         <button
-          class="btn btn-outline-success me-2"
+          class="btn btn-outline-success me-1"
           type="button"
           [routerLink]="['/search/' + searchMovieTitle]"
         >
           Search
         </button>
+      </div>
 
-        <button class="btn btn-outline-primary">Login</button>
+      <div class="d-flex">
+        <button
+          class="btn btn-outline-primary"
+          (click)="auth.loginWithPopup()"
+          *ngIf="!(auth.isAuthenticated$ | async); else logoutButton"
+        >
+          <i class="bi bi-box-arrow-in-right me-1"></i>Login
+        </button>
+
+        <ng-template #logoutButton>
+          <div class="btn-group btn-logout">
+            <button
+              type="button"
+              class="btn dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="true"
+              id="dropdownMenuButton1"
+            >
+              <img
+                [src]="loggedInUser.picture"
+                [alt]="loggedInUser.name"
+                class="rounded-circle"
+                height="30"
+                width="30"
+              />
+            </button>
+
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownMenuButton1"
+            >
+              <li>
+                <a href="#" class="dropdown-item">
+                  <span *ngIf="loggedInUser.name">
+                    <b>
+                      <i class="bi bi-person me-1"></i
+                      >{{ loggedInUser.name }}</b
+                    >
+                  </span>
+                  <br />
+                  <span *ngIf="loggedInUser.email">
+                    <b>
+                      <i class="bi bi-envelope me-1"></i
+                      >{{ loggedInUser.email }}
+                    </b>
+                  </span>
+                </a>
+              </li>
+
+              <hr />
+
+              <li>
+                <button class="dropdown-item logout" (click)="auth.logout()">
+                  <i class="bi bi-box-arrow-left me-1"></i>Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>

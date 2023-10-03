@@ -23,6 +23,7 @@ import { MyIfDirective } from './directives/my-if.directive';
 import { MoviesService } from './services/movies.service';
 import { GlobalErrorHandler } from './services/global-error-handler.service';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,15 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+    // Import the module into the application, with configuration
+    AuthModule.forRoot({
+      domain: 'dev-y3j7elwwnzc6px8a.us.auth0.com',
+      clientId: 'iokUsppcyOgS5tgjxIZlZiyMP0WuKKNv',
+      authorizationParams: {
+        redirect_uri: window.location.origin,
+      },
+    }),
   ],
   providers: [
     MoviesService,
